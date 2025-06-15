@@ -1,0 +1,103 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f8f8;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 30px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .logo-img {
+    height: 50px;
+    object-fit: contain;
+  }
+  
+  .inline-list {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .inline-list li {
+    cursor: pointer;
+    font-weight: 500;
+    color: #333;
+    transition: color 0.3s;
+  }
+  
+  .inline-list li:hover {
+    color: #007bff;
+  }
+  
+  /* Main Container */
+  .container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+  
+  /* Search Placeholder */
+  .search {
+    margin-bottom: 20px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Restaurant Cards */
+  .res-card:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+  }
+  
+  .res-card img {
+    width: 100%;
+    border-radius: 8px;
+    height:260px;
+    object-fit: cover;
+  }
+  
+  .res-card p {
+    margin: 8px 0 0 0;
+    font-size: 14px;
+    color: #444;
+  }
+  
+  .res-card p:first-of-type {
+    font-size: 16px;
+    font-weight: bold;
+    color: #222;
+  }
+  
+  .res-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between; 
+  }
+  
+  .res-card {
+    flex: 1 1 calc(25% - 20px); 
+    max-width: 300px;
+    min-width: 250px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+  }
+  
