@@ -1,103 +1,210 @@
 /* Global Styles */
 body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f8f8;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+/* Header (if present) */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 15px 30px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-img {
+  height: 50px;
+  object-fit: contain;
+}
+
+.inline-list {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.inline-list li {
+  cursor: pointer;
+  font-weight: 500;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.inline-list li:hover {
+  color: #007bff;
+}
+
+/* Main Container */
+.container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* Filter Section */
+.filter {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+  padding: 0;
+  margin-left: 0;
+}
+
+.filter-btn {
+  background-color: #e0e0e0;
+  color: #333;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.filter-btn:hover {
+  background-color: #d5d5d5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.filter-btn:active {
+  background-color: #cfcfcf;
+  transform: scale(0.98);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Restaurant Container */
+.res-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+/* Card Styling */
+.res-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 260px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.res-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.res-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.res-card p {
+  margin: 8px 12px;
+  font-size: 14px;
+  color: #444;
+}
+
+.res-card p:first-of-type {
+  font-size: 16px;
+  font-weight: bold;
+  color: #222;
+}
+
+/* Cuisine line */
+.res-card p:last-of-type {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.shimmer-card {
+  width: 260px;
+  height: 300px;
+  border-radius: 16px;
+  background-color: #fff;
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: pulse 1.5s infinite;
+}
+
+.shimmer-img {
+  height: 180px;
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 12px;
+}
+
+.shimmer-line {
+  height: 12px;
+  background-color: #e0e0e0;
+  border-radius: 6px;
+}
+
+.shimmer-line.short {
+  width: 40%;
+}
+
+.shimmer-line.medium {
+  width: 60%;
+}
+
+.shimmer-line.long {
+  width: 90%;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #e0e0e0;
   }
-  
-  /* Header */
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff;
-    padding: 15px 30px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+
+  50% {
+    background-color: #f5f5f5;
   }
-  
-  .logo-img {
-    height: 50px;
-    object-fit: contain;
+
+  100% {
+    background-color: #e0e0e0;
   }
-  
-  .inline-list {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .inline-list li {
-    cursor: pointer;
-    font-weight: 500;
-    color: #333;
-    transition: color 0.3s;
-  }
-  
-  .inline-list li:hover {
-    color: #007bff;
-  }
-  
-  /* Main Container */
-  .container {
-    max-width: 1200px;
-    margin: 30px auto;
-    padding: 0 20px;
-  }
-  
-  /* Search Placeholder */
-  .search {
-    margin-bottom: 20px;
-    height: 40px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-  }
-  
-  /* Restaurant Cards */
-  .res-card:hover {
-    transform: translateY(-5px);
-    cursor: pointer;
-  }
-  
-  .res-card img {
-    width: 100%;
-    border-radius: 8px;
-    height:260px;
-    object-fit: cover;
-  }
-  
-  .res-card p {
-    margin: 8px 0 0 0;
-    font-size: 14px;
-    color: #444;
-  }
-  
-  .res-card p:first-of-type {
-    font-size: 16px;
-    font-weight: bold;
-    color: #222;
-  }
-  
-  .res-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between; 
-  }
-  
-  .res-card {
-    flex: 1 1 calc(25% - 20px); 
-    max-width: 300px;
-    min-width: 250px;
-    background-color: #fff;
-    border-radius: 12px;
-    padding: 15px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    transition: transform 0.2s ease;
-  }
-  
+}
+.inline-list button {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.inline-list button:hover {
+  background-color: #f0f0f0;
+  border-color: #bbb;
+  transform: translateY(-1px);
+}
+
+.inline-list button:active {
+  background-color: #e0e0e0;
+  transform: scale(0.97);
+}
