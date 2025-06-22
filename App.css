@@ -1,11 +1,17 @@
 /* Global Styles */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f4f6f8;
   color: #333;
 }
-
+/* Remove underline (default text-decoration) from all anchor tags */
+a,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
 /* Header */
 .header {
   display: flex;
@@ -85,7 +91,7 @@ body {
   margin: 30px 127px;
 }
 
-.filter>div {
+.filter > div {
   display: flex;
   align-items: center;
 }
@@ -248,4 +254,212 @@ body {
   100% {
     background-color: #e0e0e0;
   }
+}
+/* Error Page */
+.error-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f6f8;
+  padding: 20px;
+  text-align: center;
+}
+
+.error-box {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  max-width: 500px;
+  width: 100%;
+}
+
+.error-box h1 {
+  font-size: 28px;
+  color: #e63946;
+  margin-bottom: 16px;
+}
+
+.error-status {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.error-message {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 24px;
+}
+
+.home-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.home-btn:hover {
+  background-color: #555;
+}
+
+/* About us */
+.about-container {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background-color: #f4f6f8;
+  min-height: 100vh;
+}
+
+.about-card {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  max-width: 700px;
+  width: 100%;
+  text-align: left;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.about-card h1 {
+  font-size: 28px;
+  margin-bottom: 16px;
+  color: #2c3e50;
+}
+
+.about-card p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.about-team h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.about-team ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-team li {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+/* Contact Us */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background-color: #f4f6f8;
+  min-height: 100vh;
+}
+
+.contact-card {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  max-width: 700px;
+  width: 100%;
+  text-align: left;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contact-card h1 {
+  font-size: 28px;
+  margin-bottom: 16px;
+  color: #2c3e50;
+}
+
+.contact-card p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.contact-info {
+  margin-bottom: 30px;
+}
+
+/* Restaurant Menu */
+.menu-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.menu-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.restaurant-name {
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.restaurant-info {
+  font-size: 16px;
+  color: #777;
+}
+
+.menu-section h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 8px;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 18px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.menu-item h4 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  color: #333;
+}
+
+.menu-item p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 15px;
+  color: #444;
+}
+
+.rating {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #ff9529;
+  font-weight: 500;
 }

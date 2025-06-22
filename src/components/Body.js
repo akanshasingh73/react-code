@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import ResCard from "./Card";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const MainContainer = () => {
+  
+  // Whenever a state variable is updated, React re-triggers the reconciliation cycle (re-renders the component).
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
@@ -11,6 +14,13 @@ const MainContainer = () => {
   useEffect(() => {
     fetchRestaurantData();
   }, []);
+
+  // If `searchText` is in the dependency array, the useEffect runs everytime whenever `searchText` changes.
+  useEffect(() => {
+    if (searchText.trim() === "") {
+      setFilteredRestaurants(allRestaurants);
+    }
+  }, [searchText]);
 
   const fetchRestaurantData = async () => {
     try {
@@ -43,6 +53,10 @@ const MainContainer = () => {
     setFilteredRestaurants(topRated);
   };
 
+  const handleKeyDown = (key) => {
+    if (key === "Enter") handleSearch();
+  };
+
   // Render shimmer while loading
   if (loading) return <Shimmer />;
 
@@ -56,6 +70,7 @@ const MainContainer = () => {
             placeholder="Search restaurants..."
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
+            onKeyDown={(e) => handleKeyDown(e.key)}
           />
           <button className="search-btn" onClick={handleSearch}>
             Search
@@ -73,7 +88,12 @@ const MainContainer = () => {
       ) : (
         <div className="res-container">
           {filteredRestaurants.map((restaurant) => (
-            <ResCard key={restaurant?.info?.id} resData={restaurant} />
+            <Link
+              key={restaurant?.info?.id}
+              to={"/restaurant/" + restaurant?.info.id}
+            >
+              <ResCard resData={restaurant} />
+            </Link>
           ))}
         </div>
       )}
