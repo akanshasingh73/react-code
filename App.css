@@ -6,12 +6,12 @@ body {
   color: #333;
 }
 
-/* Header (if present) */
+/* Header */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffffff;
+  background-color: #fff;
   padding: 15px 30px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   position: sticky;
@@ -24,6 +24,7 @@ body {
   object-fit: contain;
 }
 
+/* Navigation */
 .inline-list {
   display: flex;
   list-style: none;
@@ -43,20 +44,84 @@ body {
   color: #007bff;
 }
 
-/* Main Container */
+.inline-list button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.inline-list button:hover {
+  background-color: #f0f0f0;
+  border-color: #bbb;
+  transform: translateY(-1px);
+}
+
+.inline-list button:active {
+  background-color: #e0e0e0;
+  transform: scale(0.97);
+}
+
+/* Layout Container */
 .container {
   max-width: 1200px;
   margin: 30px auto;
   padding: 0 20px;
 }
 
-/* Filter Section */
+/* Filter/Search Section */
 .filter {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
-  margin-bottom: 30px;
-  padding: 0;
-  margin-left: 0;
+  align-items: center;
+  gap: 16px;
+  margin: 30px 127px;
+}
+
+.filter>div {
+  display: flex;
+  align-items: center;
+}
+
+.search-text {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px 0 0 8px;
+  font-size: 14px;
+  width: 600px;
+  background-color: #fff;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-text:focus {
+  border-color: #999;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-btn {
+  padding: 10px 16px;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #333;
+  border-left: none;
+  border-radius: 0 8px 8px 0;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-btn:hover {
+  background-color: #555;
+  transform: translateY(-1px);
 }
 
 .filter-btn {
@@ -84,8 +149,7 @@ body {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-
-/* Restaurant Container */
+/* Restaurant Cards Grid */
 .res-container {
   display: flex;
   flex-wrap: wrap;
@@ -93,9 +157,9 @@ body {
   justify-content: center;
 }
 
-/* Card Styling */
+/* Card */
 .res-card {
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: 16px;
   overflow: hidden;
   width: 260px;
@@ -127,13 +191,13 @@ body {
   color: #222;
 }
 
-/* Cuisine line */
 .res-card p:last-of-type {
   font-size: 13px;
   color: #666;
   margin-bottom: 12px;
 }
 
+/* Shimmer UI */
 .shimmer-card {
   width: 260px;
   height: 300px;
@@ -184,27 +248,4 @@ body {
   100% {
     background-color: #e0e0e0;
   }
-}
-.inline-list button {
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #333;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-.inline-list button:hover {
-  background-color: #f0f0f0;
-  border-color: #bbb;
-  transform: translateY(-1px);
-}
-
-.inline-list button:active {
-  background-color: #e0e0e0;
-  transform: scale(0.97);
 }
